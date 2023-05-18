@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.GameMainActivity"
+        android:background="#D72F3C">
+
+
+        <com.liuxe.wordchallenge.widget.SnowView
+            android:id="@+id/snowView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/line_vc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_percent="0.5"
+            android:orientation="vertical"/>
+
+        <TextView
+            android:id="@+id/tv_hua"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/line_vc"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:textColor="@color/text_border_color"
+            android:background="@drawable/shape_user_info_bg"/>
+        <ImageView
+            android:id="@+id/iv_hua"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintDimensionRatio="159:138"
+            android:src="@drawable/ic_hua"
+            app:layout_constraintTop_toTopOf="@id/tv_hua"
+            app:layout_constraintBottom_toBottomOf="@id/tv_hua"
+            app:layout_constraintStart_toStartOf="@id/tv_hua"
+            android:layout_marginStart="-24dp"/>
+
+        <TextView
+            android:id="@+id/tv_star"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/line_vc"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:paddingStart="24dp"
+            android:textColor="@color/text_border_color"
+            android:background="@drawable/shape_user_info_bg"/>
+        <ImageView
+            android:id="@+id/iv_star"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:layout_constraintDimensionRatio="148:134"
+            android:src="@drawable/ic_star"
+            app:layout_constraintTop_toTopOf="@id/tv_star"
+            app:layout_constraintBottom_toBottomOf="@id/tv_star"
+            app:layout_constraintStart_toStartOf="@id/tv_star"
+            android:layout_marginStart="-24dp"/>
+
+
+        <ImageView
+            android:id="@+id/iv_land"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="h,379:237"
+            android:src="@drawable/ic_person_land_green"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintVertical_bias="0.36"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        <ImageView
+            android:id="@+id/iv_roler_change_btn"
+            android:layout_width="36dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="86:90"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_land"
+            app:layout_constraintStart_toStartOf="@id/iv_persopn"
+            app:layout_constraintEnd_toEndOf="@id/iv_persopn"
+            android:layout_marginTop="-20dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/ic_roler_change_btn" />
+
+        <ImageView
+            android:id="@+id/iv_land_yin"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_person_land"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_land"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintDimensionRatio="98:65"
+            app:layout_constraintBottom_toBottomOf="@id/iv_land"/>
+
+        <ImageView
+            android:id="@+id/iv_persopn"
+            android:layout_width="120dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="220:300"
+            android:src="@drawable/p2anim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/iv_land_yin"
+            android:layout_marginBottom="10dp"/>
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_book"
+            android:layout_width="240dp"
+            android:layout_height="100dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_land"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="60dp"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="48dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="86:91"
+            app:layout_constraintTop_toTopOf="@id/vp_book"
+            app:layout_constraintBottom_toBottomOf="@id/vp_book"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/ic_to_left"
+            android:layout_marginStart="24dp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="48dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="86:91"
+            app:layout_constraintTop_toTopOf="@id/vp_book"
+            app:layout_constraintBottom_toBottomOf="@id/vp_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_to_right"
+            android:layout_marginEnd="24dp" />
+
+
+
+        <ImageView
+            android:id="@+id/iv_start"
+            android:layout_width="160dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="378:128"
+            android:src="@drawable/ic_start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vp_book"
+            android:layout_marginTop="60dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
