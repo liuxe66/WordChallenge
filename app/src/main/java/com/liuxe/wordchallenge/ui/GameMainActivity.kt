@@ -14,6 +14,7 @@ import com.liuxe.wordchallenge.databinding.ActivityGameMainBinding
 import com.liuxe.wordchallenge.ext.launchActivity
 import com.liuxe.wordchallenge.ui.adapter.BookAdapter
 import com.liuxe.wordchallenge.ui.vm.MainVM
+import com.liuxe.wordchallenge.utils.Preference
 
 class GameMainActivity : BaseDataBindingActivity() {
 

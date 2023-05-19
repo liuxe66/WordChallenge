@@ -9,6 +9,7 @@ import com.liuxe.wordchallenge.data.entity.UserEntity
 import com.liuxe.wordchallenge.data.entity.WordEntity
 import com.liuxe.wordchallenge.data.repository.RepositoryFactory
 import com.liuxe.wordchallenge.http.api.doSuccess
+import com.liuxe.wordchallenge.utils.Preference
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

@@ -6,6 +6,7 @@ import com.liuxe.wordchallenge.base.BaseViewModel
 import com.liuxe.wordchallenge.data.entity.BookEntity
 import com.liuxe.wordchallenge.data.entity.UserEntity
 import com.liuxe.wordchallenge.data.repository.RepositoryFactory
+import com.liuxe.wordchallenge.utils.Preference
 import kotlinx.coroutines.flow.collectLatest
 
 /**
@@ -20,6 +21,9 @@ class MainVM : BaseViewModel() {
     private val _bookIndex = MutableLiveData<Int>()
     var bookIndex = _bookIndex
     private val bookList = ArrayList<BookEntity>()
+
+    var lastBookPosition by Preference(Preference.lastBookPosition,0)
+
 
     /**
      * 获取用户信息
@@ -58,7 +62,7 @@ class MainVM : BaseViewModel() {
     fun loadAllBook() = liveData {
         repository.queryBookAll().collectLatest {
             bookList.addAll(it)
-            _bookIndex.value = 0
+            _bookIndex.value =  lastBookPosition
             emit(bookList)
         }
 
@@ -117,6 +121,7 @@ class MainVM : BaseViewModel() {
         } else {
             curBookIndex--
         }
+        lastBookPosition = curBookIndex
         _bookIndex.value = curBookIndex
     }
 
@@ -129,6 +134,7 @@ class MainVM : BaseViewModel() {
         } else {
             curBookIndex++
         }
+        lastBookPosition = curBookIndex
         _bookIndex.value = curBookIndex
     }
 

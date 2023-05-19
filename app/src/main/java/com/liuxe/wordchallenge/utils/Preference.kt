@@ -21,6 +21,7 @@ class Preference<T>() {
 
     companion object {
         const val isFirstLoad = "isFirstLoad"
+        const val lastBookPosition = "lastBookPosition"
     }
 
     constructor(keyName: String,defaultValue: T) : this() {
